@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Card Design Using HTML and CSS - Coding Power</title>
+</head>
+<body>
+
+   <div class="container">
+       <div class="product">
+           <div class="image">
+               <img class="product-image" src="img/chevrolet-tracker-2021-imagens-do-site-21-e1584367400653.jpg
+               " alt="">
+           </div>
+           <div class="color">
+               <span class="orange active" data-image="img/chevrolet-tracker-2021-imagens-do-site-21-e1584367400653.jpg
+               " data-color="#DE522F"></span>
+               <span class="green" data-image="img/chevrolet_tracker_2021_2-1365x1024.jpg
+               " data-color="#9ABE62"></span>
+               <span class="black" data-image="img/fffb2e94-be3d-4b05-b3cd-659bf3f728fb_1365x1024.jpg" data-color="#222627"></span>
+               <span class="red" data-image="img/images.jpg" data-color="#B41D26"></span>
+           </div>
+           <div class="title">
+            Chevrolet Tracker 2024
+           </div>
+           <div class="detail">
+               <p>Preço : <span>R$150.000</span></p>
+               <a href="#">Adicionar no carrinho</a>
+           </div>
+       </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script>
+       $(".color span").click(function(){
+
+        $(".color span").removeClass("active");
+        $(this).addClass("active");
+        $(".detail span").css("color",$(this).attr("data-color"));
+        $(".detail a").css("background",$(this).attr("data-color"));
+        $(".product-image").attr("src",$(this).attr("data-image"));
+        $("body").css("background",$(this).attr("data-color"));
+       });
+   </script>
+
+</body>
+</html>
